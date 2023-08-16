@@ -13,11 +13,11 @@ function init() {}
 init();
 
 // grabbed from class work on creating file in node
-const fs = require('fs');
+// const fs = require('fs');
 
-fs.writeFile('README.md', process.argv[2], (err) =>
-  err ? console.error(err) : console.log('Success!')
-);
+// fs.writeFile('README.md', process.argv[2], (err) =>
+//   err ? console.error(err) : console.log('Success!')
+// );
 
 // below grabbed from class work with inquirer and questions modified from profesinall read me guide proved in class work
 const inquirer = require('inquirer');
@@ -38,12 +38,12 @@ inquirer
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'description1',
         message: 'What was your motivation for making this project?',
     },
     {
         type: 'input',
-        name: 'description',
+        name: 'description2',
         message: 'What problem does this project solve',
     },
     {
@@ -53,15 +53,10 @@ inquirer
     },
     
     {
-        type: 'input',
-        name: 'table of contents',
-        message: 'What is the name of your project?',
-      },
-    {
       type: 'checkbox',
-      message: 'What languages do you know?',
-      name: 'stack',
-      choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
+      message: 'What sections do you need in your table of contents',
+      name: 'table',
+      choices: ['#Installation', '#Usage', '#Credits', '#License'],
     },
     {
       type: 'list',
@@ -71,7 +66,7 @@ inquirer
     },
   ])
   .then((data) => {
-    const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+     const filename = `README.md`;
 
     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
       err ? console.log(err) : console.log('Success!')
