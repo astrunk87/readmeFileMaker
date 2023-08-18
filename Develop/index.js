@@ -4,7 +4,7 @@
 const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {} *******
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -101,6 +101,15 @@ inquirer
     // },
   ])
 
+  .then((data) => {
+    const filename = `${data.title}.json`;
+
+    fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+  });
+
+
 //   .then(generateMarkdown);
 //   .then((generateMarkdown) => {
 //      const filename = `READMEtest.md`;
@@ -109,11 +118,3 @@ inquirer
     //   err ? console.log(err) : console.log('Success!')
     // );
 //   });
-  .then((data) =>{
-    const filename = `$(respone.name.toLowerCase().split(' '.join('')}.jason`;
-
-    fs.writeFile("filename.json", JSON.stringify(data) =>
-  err ? console.error(err) : console.log('Success!')
-    );  
-});
-// ^ from class work
