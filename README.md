@@ -33,7 +33,7 @@ SO THAT I can quickly create a professional README for a new project
 ```md
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
-THEN a high-quality, professional README.md is generated with the title of my project* and sections entitled Description*, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+THEN a high-quality, professional README.md is generated with the title of my project* and sections entitled Description*, Table of Contents*, Installation*, Usage*, License*, Contributing*, Tests*, and Questions*
 WHEN I enter my project title
 THEN this is displayed as the title of the README
 WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
@@ -61,3 +61,10 @@ Here are some guidelines to help you get started:
 * Refer to the [Fullstack Blog Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for additional guidance on creating a video.
 
 * Include any other screenshots you deem necessary to help someone who has never been introduced to your application understand the purpose and function of it. This is how you will communicate to potential employers or other developers in the future what you built and why, and to show how it works
+
+
+after program in run need to run function that makes markdown file. using init?
+that function runs something that pulls the data and make it nice
+    data.tile
+    data. description1
+    etc
