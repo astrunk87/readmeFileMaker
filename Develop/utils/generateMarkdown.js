@@ -18,20 +18,20 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   const licenseLinks = {
-    MIT: '[![MIT](https://choosealicense.com/licenses/mit/)',
-    ISC:'[![ISC](https://choosealicense.com/licenses/isc/)',
-    GNUGPLv3: '[![GNUGPLv3](https://choosealicense.com/licenses/gpl-3.0/)',
+    MIT: '[MIT](https://choosealicense.com/licenses/mit/)',
+    ISC:'[ISC](https://choosealicense.com/licenses/isc/)',
+    GNUGPLv3: '[GNUGPLv3](https://choosealicense.com/licenses/gpl-3.0/)',
     none: '',
   }
   return licenseLinks[license]
 };
-// function renderLicenseSection(license) {
-//   if(license) {
-//     return `Licensed under the ${renderLicenseLink(license)} license`
-//   } else {
-//     return ''
-//   }
-// };
+function renderLicenseSection(license) {
+  if(license) {
+    return `Licensed under the ${renderLicenseLink(license)} license`
+  } else {
+    return ''
+  }
+};
 
 
 // TODO: Create a function to generate markdown for README
@@ -40,12 +40,7 @@ function generateReadme(data) {
   return `
 
 # ${data.title}
-
 ${renderLicenseBadge(data.license)}
-## description
- ${data.description1}
- ${data.description2}
- ${data.description3}
 
 ## Table of Content 
 * [project description](#Description)
@@ -56,6 +51,11 @@ ${renderLicenseBadge(data.license)}
 * [Contact](#Contact)
 
 
+## description
+ ${data.description1}
+ ${data.description2}
+ ${data.description3}
+
 ## Installation
   ${data.installation}
 
@@ -63,8 +63,7 @@ ${renderLicenseBadge(data.license)}
   ${data.usage}
 
 ## License
-  Licensed under 
-  ${data.license} 
+  ${renderLicenseSection(data.license)} 
 
 ## Contributions 
   ${data.contributionsPeople}
