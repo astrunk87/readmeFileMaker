@@ -1,3 +1,8 @@
+
+
+const fs = require('fs');
+const filename = "READMEtest.md";
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 // function renderLicenseBadge(license) {
@@ -23,24 +28,46 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}`;
-  // return `# ${data.description}`;
-  // return `# ${data.description1}`;
-  // return `# ${data.description2}`;
-  // return `# ${data.description3}`;
-  // return `# ${data.table}`;
-  // return `# ${data.installation}`;
-  // return `# ${data.usage}`;
-  // return `# ${data.license}`
-  // return `# ${data.contributions}`;
-  // return `# ${data.testing}`;
-  // return `# ${data.questions}`;
-  // return `# ${data.contact}`;
+
+// function generateMarkdown(data) {
+//   fs.writeFile(filename), (err) =>
+//   err ? console.log(err) : console.log('Success!');
+class Markdown {
+  static generateReadme(data) {
+    return `
+# ${data.title}
+## description
+ ${data.description}
+ ${data.description1}
+ ${data.description2}
+ ${data.description3}
+
+ ## Table of Content 
+  ${data.table}
+
+## Installation
+  ${data.installation}
+## usage
+  ${data.usage}
+
+## License
+  ${data.license}
+
+## Contributions 
+  ${data.contributions}
+
+## Testing 
+  ${data.testing}
+
+## Questions
+  ${data.questions}
+
+## Contact 
+  ${data.contact}`
   
   
 
 
-}
+}}
 
-module.exports = generateMarkdown;
+module.exports = Markdown;
