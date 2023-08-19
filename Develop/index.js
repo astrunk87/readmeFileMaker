@@ -39,21 +39,21 @@ const fs = require('fs');
         name: 'description',
         message: 'write a short description of your project',
     },
-    // {
-    //     type: 'input',
-    //     name: 'description1',
-    //     message: 'What was your motivation for making this project?',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'description2',
-    //     message: 'What problem does this project solve',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'description3',
-    //     message: 'What did you learn',
-    // },
+    {
+        type: 'input',
+        name: 'description1',
+        message: 'What was your motivation for making this project?',
+    },
+    {
+        type: 'input',
+        name: 'description2',
+        message: 'What problem does this project solve',
+    },
+    {
+        type: 'input',
+        name: 'description3',
+        message: 'What did you learn',
+    },
     
     // {
     //   type: 'checkbox',
@@ -61,43 +61,38 @@ const fs = require('fs');
     //   name: 'table',
     //   choices: ['#Installation', '#Usage', '#Credits', '#License'],
     // },
-    // {
-    //     type: 'input',
-    //     name: 'installation',
-    //     message: 'what is need to install this program?',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'usage',
-    //     message: 'how do you use this program?',
-    // },
-    // {
-    //     type: 'list',
-    //     name: 'license',
-    //     message: 'What license do you need?',
-    //     choices:['none', 'MIT','ISC', 'GNU GPLv3']
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'contributions',
-    //     message: 'list any contributions:',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'testing',
-    //     message: 'examples of testing:',
-    // },
-    // {
-    //     type: 'input',
-    //     name: 'questions',
-    //     message: 'enter email address:',
-    // },
-    // {
-    //   type: 'list',
-    //   message: 'What is your preferred method of communication?',
-    //   name: 'contact',
-    //   choices: ['email', 'phone', 'telekinesis'],
-    // },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'what is need to install this program?',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'how do you use this program?',
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What license do you need?',
+        choices:['none', 'MIT','ISC', 'GNU GPLv3']
+    },
+    {
+        type: 'input',
+        name: 'contributions',
+        message: 'list any contributions:',
+    },
+    {
+        type: 'input',
+        name: 'testing',
+        message: 'examples of testing:',
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'enter email address:',
+    },
+   
   ]
 
 
