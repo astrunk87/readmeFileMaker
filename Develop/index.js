@@ -1,10 +1,4 @@
-// TODO: Include packages needed for this application
-// listed below
-// TODO: Create an array of questions for user input
-// const questions = [];
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {} *******
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -12,32 +6,20 @@ function init() {}
 // Function call to initialize app
 init();
 
-// grabbed from class work on creating file in node
-// const fs = require('fs');
-
-// fs.writeFile('README.md', process.argv[2], (err) =>
-//   err ? console.error(err) : console.log('Success!')
-// );
 
 // brings in generate markdown function
-const Markdown = require(`./utils/generateMarkdown.js`);
+const generateReadme = require(`./utils/generateMarkdown.js`);
 
-// below grabbed from class work with inquirer and questions modified from profesinall read me guide proved in class work
+// below grabbed from class work with inquirer and questions modified from professional read me guide proved in class work
 const inquirer = require('inquirer');
 const fs = require('fs');
 
 
-    const questions = [   
+const questions = [   
     {
       type: 'input',
       name: 'title',
       message: 'What is the name of your project?',
-    },
-    // might not need this question because next few questions make up the description
-    {
-        type: 'input',
-        name: 'description',
-        message: 'write a short description of your project',
     },
     {
         type: 'input',
@@ -54,13 +36,6 @@ const fs = require('fs');
         name: 'description3',
         message: 'What did you learn',
     },
-    
-    // {
-    //   type: 'checkbox',
-    //   message: 'What sections do you need in your table of contents',
-    //   name: 'table',
-    //   choices: ['#Installation', '#Usage', '#Credits', '#License'],
-    // },
     {
         type: 'input',
         name: 'installation',
@@ -79,8 +54,13 @@ const fs = require('fs');
     },
     {
         type: 'input',
-        name: 'contributions',
-        message: 'list any contributions:',
+        name: 'contributionsPeople',
+        message: 'list any people that contributed',
+    },
+    {
+        type: 'input',
+        name: 'contributionsTutorials',
+        message: 'list any tutorials you used',
     },
     {
         type: 'input',
@@ -92,26 +72,29 @@ const fs = require('fs');
         name: 'questions',
         message: 'enter email address:',
     },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'enter your github link here',
+    },
    
   ]
 
 
-//   .then((data) => {
-//     const filename = `${data.title}.json`;
     
 function runApp() {
     return inquirer.prompt(questions)
         .then((data) => {
-        const mark = Markdown.generateReadme(data)      
-        fs.writeFile('READMEtest.md',mark, function (err){ 
+        const mark = generateReadme(data)      
+        fs.writeFile('README.md',mark, function (err){ 
             if (err) {
                 console.log(err) 
-             } else { console.log('Success!')
+             } else { console.log('Success! your readme file has been created')
             }
         })}
         
     )}
 
 runApp()    
-// ^ with help from youtube video linked in readme file
+// ^function above with help from youtube video linked in readme file
 
