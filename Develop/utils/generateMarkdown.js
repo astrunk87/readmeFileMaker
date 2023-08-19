@@ -1,27 +1,29 @@
 
-
-const fs = require('fs');
-const filename = "READMEtest.md";
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// function renderLicenseBadge(license) {
+function renderLicenseBadge(license) {
+  const badges = {
+    MIT:`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+    GNUGPLv3:`[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`,
+    ISC:`[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`,
+  }
+    return badges[license]
+  // badge links grabbed from : https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+  if (license === 'none')
+  return "";
 
-//   if (license === 'none')
-//   return "";
-// } else {
-//   return '[!github]'(http://img.shields.io/badge/license-${liscense}-blue.svg)
-// }
+};
 
-// }
-
-// ^grabbed from office hours work 
-// below grabbed from live channel in slack, posted by TA Kimberly Rodriguez
-// [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  const licenseLinks = {
+    MIT: '[MIT](https://choosealicense.com/licenses/mit/)',
+    ISC:'[ISC](https://choosealicense.com/licenses/isc/)',
+    GNUGPLv3: '[GNUGPLv3](https://choosealicense.com/licenses/gpl-3.0/)',
+  }
+};
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -36,6 +38,8 @@ class Markdown {
   static generateReadme(data) {
     return `
 # ${data.title}
+
+${this.renderLicenseBadge(data.license)}
 ## description
  ${data.description}
  ${data.description1}

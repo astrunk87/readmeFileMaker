@@ -75,7 +75,7 @@ const fs = require('fs');
     //     type: 'list',
     //     name: 'license',
     //     message: 'What license do you need?',
-    //     choices:['none', 'MIT', 'GNU GPLv3']
+    //     choices:['none', 'MIT','ISC', 'GNU GPLv3']
     // },
     // {
     //     type: 'input',
@@ -118,15 +118,5 @@ function runApp() {
     )}
 
 runApp()    
+// ^ with help from youtube video linked in readme file
 
-//   .then (generateMarkdown);
-
-
-//   .then(generateMarkdown);
-//   .then((generateMarkdown) => {
-//      const filename = `READMEtest.md`;
-
-    // fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-    //   err ? console.log(err) : console.log('Success!')
-    // );
-//   });
