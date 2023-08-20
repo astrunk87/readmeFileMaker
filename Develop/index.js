@@ -89,7 +89,7 @@ function runApp() {
         fs.writeFile('README.md',mark, function (err){ 
             if (err) {
                 console.log(err) 
-             } else { console.log('Success! your readme file has been created')
+             } else { console.log('Success!! your readme file has been created')
             }
         })}
         

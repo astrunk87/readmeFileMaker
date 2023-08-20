@@ -7,7 +7,7 @@ function renderLicenseBadge(license) {
     MIT:'[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
     GNUGPLv3:'[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
     ISC:'[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
-    none:  "",
+    none:  '',
   }
     return badges[license] 
 };
@@ -21,17 +21,15 @@ function renderLicenseLink(license) {
     MIT: '[MIT](https://choosealicense.com/licenses/mit/)',
     ISC:'[ISC](https://choosealicense.com/licenses/isc/)',
     GNUGPLv3: '[GNUGPLv3](https://choosealicense.com/licenses/gpl-3.0/)',
-    none: '',
+    none: 'none',
   }
   return licenseLinks[license]
 };
 function renderLicenseSection(license) {
   if(license) {
     return `Licensed under the ${renderLicenseLink(license)} license`
-  } else {
-    return ''
-  }
-};
+  
+}};
 
 
 // TODO: Create a function to generate markdown for README
@@ -73,7 +71,7 @@ ${renderLicenseBadge(data.license)}
   ${data.testing}
 
 ## Questions
-  If you have questions please direcet them to this email address:
+  If you have questions please direct them to this email address:
   ${data.questions}
   
 ## Github link
